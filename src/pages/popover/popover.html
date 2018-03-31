@@ -1,0 +1,26 @@
+
+<ion-content >
+
+
+  <ion-grid class="header">
+      <ion-row class="whiteclr">
+	     <ion-col text-center col-12>
+	      <p><b>Sort List</b></p>
+		 </ion-col> 
+      </ion-row>
+  </ion-grid>
+  
+  
+  <div  radio-group [(ngModel)]="selectedSorting">
+        <ion-item >
+			<ion-label>Sort by Recent</ion-label>
+			<ion-radio  value="recent" (click)="close(selectedSorting)"></ion-radio>
+		</ion-item>
+
+		<ion-item >
+			<ion-label>Sort by Older</ion-label>
+			<ion-radio  value="older" (click)="close(selectedSorting)"></ion-radio>
+		</ion-item>
+  </div>
+  
+</ion-content>

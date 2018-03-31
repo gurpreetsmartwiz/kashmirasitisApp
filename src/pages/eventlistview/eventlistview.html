@@ -1,0 +1,41 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent>
+    <ion-title>Event List</ion-title>
+	 <ion-buttons right  > 
+		 <button  ion-button clear start>
+            <ion-icon name="ios-information-circle-outline" clear style="color:transparent"></ion-icon>
+         </button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content class="bg3">
+
+    <div *ngFor="let events of eventList;let i = index">
+    <ion-card  *ngIf="eventList[i].event" padding>
+
+	   <ion-row>
+			<ion-col col-6 class="brown_clr"><b>Tithi:</b></ion-col>
+			<ion-col text-right col-6>{{events.tithi}}</ion-col>
+	   </ion-row>
+	
+	
+	   <ion-row>
+			<ion-col col-6 class="brown_clr"><b>Event date:</b></ion-col>
+			<ion-col text-right col-6>{{events.from}}</ion-col>
+	   </ion-row> 	
+    
+	<hr class="hrstyle" >
+	
+    <p text-center><b>{{events.event}}</b></p>
+	   
+	   
+    </ion-card>
+    </div>
+	
+</ion-content>

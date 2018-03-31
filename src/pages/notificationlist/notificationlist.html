@@ -1,0 +1,59 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent>
+    <ion-buttons right> 
+		 <button  ion-button clear start>
+            <ion-icon name="menu" style="color:transparent"></ion-icon>
+         </button>
+	</ion-buttons>
+	
+    <ion-title>Notifications</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+<ion-content style="background-color: #f1e9d7;">
+    
+
+ <ion-list>
+  <ion-card *ngFor="let item of notificationList">
+  <ion-item-sliding >
+    <ion-item>
+      <h6>{{ item.title }}</h6>
+      <p>{{ item.message }}</p>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button right large style="background-color: #b9431c;" color="danger" >
+        <ion-icon name="md-trash"></ion-icon>
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-card>
+  </ion-list>
+
+
+  <ion-list>
+  <ion-card *ngFor="let item of nf">
+  <ion-item-sliding >
+    <ion-item>
+      <h6>{{ item.title }}</h6>
+      <p>{{ item.message }}</p>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button right large style="background-color: #b9431c;" color="danger" (click)="removeNotification(item)">
+        <ion-icon name="md-trash"></ion-icon>
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-card>
+  </ion-list>
+ <!-- removeNotification(item) -->
+	
+</ion-content>
+
+
+ 

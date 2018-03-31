@@ -1,0 +1,25 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent >
+    <ion-title style="color:white">{{cats}} List</ion-title>
+	 <ion-buttons right> 
+		 <button  ion-button clear start>
+            <ion-icon name="menu" style="color:transparent"></ion-icon>
+         </button>
+	</ion-buttons>
+  </ion-navbar>
+<ion-searchbar [(ngModel)]="searchvalue" (ionInput)="searchItems($event)" ></ion-searchbar>
+</ion-header>
+
+
+
+
+<ion-content class="bg3">
+   
+    <ion-row  wrap>
+		<ion-col *ngFor="let category of subCategories" col-6 text-center (click)="checkDetail(category)"><button ion-button color="light" block round>{{category.subcategory}}</button></ion-col>	  
+    </ion-row>
+	
+
+</ion-content>

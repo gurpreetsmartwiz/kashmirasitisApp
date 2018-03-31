@@ -1,0 +1,30 @@
+
+<ion-menu [content]="content" >
+
+  <ion-header class="header">
+  <ion-toolbar transparent>
+    <ion-title >Menu</ion-title>
+  </ion-toolbar>	
+  </ion-header>
+
+  <ion-content>
+    <ion-list >
+  <button menuClose style="color:#823118" ion-item  (click)="openPage('LoginPage')">
+     <ion-icon  name="md-log-in" item-start></ion-icon>
+      Login/Signup
+    </button> 
+    <button *ngIf="dataService.userLoginStatus == '1'" menuClose style="color:#823118" ion-item 
+    (click)="openPage('ChangepasswordPage')">
+     <ion-icon  name="md-unlock" item-start></ion-icon>
+     Change Password
+    </button>	
+    <button menuClose style="color:#823118" ion-item (click)="openPage('InfoPage')">
+	   <ion-icon  name="ios-information-circle-outline" item-start></ion-icon>
+      About Us
+    </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu> 
+
+<ion-nav id="nav" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

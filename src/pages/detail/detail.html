@@ -1,0 +1,31 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent >
+    <ion-title style="color:white">{{subcatDetail.subcategory}} Detail</ion-title>
+	 <ion-buttons right> 
+		 <button  ion-button clear start>
+            <ion-icon name="menu" style="color:transparent"></ion-icon>
+         </button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+<ion-content >
+
+
+    <ion-slides  pager   pager="true"  autoplay="1000" initialSlide="0" speed="1000" > 
+	    <ion-slide *ngFor="let img of imagelides" [style.background-image]="'url('+dataService.subcatImgPath+img.image+')'" class="cover_img"> 
+		</ion-slide>
+	</ion-slides>
+	
+	
+	
+    <p padding style="padding-bottom:0;color:#b6431b"><b>{{subcatDetail.subcategory}}</b></p> 
+    <div padding [innerHTML]="subcatDetail.description"></div>
+	
+</ion-content>

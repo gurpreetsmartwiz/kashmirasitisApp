@@ -1,0 +1,76 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent>
+    <ion-title color="light" >Calendar</ion-title>
+	 <ion-buttons right (click)="goToListView()"> 
+	    <button ion-button style="width:40px">
+		   <img src="assets/img/event.png" style="width:90%">
+		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+<ion-content style="background: #616963;!important;">
+
+	<ion-grid class="calendar">
+		 <ion-row class="calendar-last-row header" >
+		 
+		        <ion-col text-center col-2 (click)="previousMonth()">
+                    <ion-icon name="ios-arrow-back"></ion-icon>
+                </ion-col>
+				
+				
+                <ion-col text-center ion-text color="light" style="color:white!important" col-8>
+                    {{current | date: 'EEEE, MMM dd yyyy'}}
+                </ion-col>
+              
+                <ion-col text-center col-2 class="right-arrow"  (click)="nextMonth()">
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                </ion-col>
+            </ion-row>
+		
+            <ion-row class="calendar-header-row" style="font-size:18px">
+                <ion-col class="center calendar-header-col" width-14 *ngFor="let head of wHeadShort">
+                    <b>{{head}}</b>
+                </ion-col>
+            </ion-row>
+            <ion-row  class="calendar-row"  *ngFor="let week of month; let i = index;">
+                <ion-col class="center calendar-col" width-14 *ngFor="let day of week; let d = index;"                   
+                    [class.diff-month]="diffMonth(day)" 
+                    [ngClass]="{'eventShow': day.events?.length&&day.events[0].ev_name}"					
+					(click)="showEvent($event,day.events,day.events?.length)"  style="padding: 2px!important;" text-center >
+                    <div style="font-size:14px;" >{{toDate(day)}}</div>  
+					<div ion-text text-center *ngFor="let evt of day.events;let e = index;"   style="word-wrap: break-word;width:100%;font-size:calc(0.5em + 0.7vmin);height:100%">		
+					<div>{{evt.tithi}}</div>
+					<!-- <div>{{evt.ev_name}}</div> -->
+					</div>
+                </ion-col>
+            </ion-row>
+        </ion-grid> 
+		
+		<!-- [class.today]="isToday(day)"  -->
+        <br>
+		
+		
+		
+		<ion-grid padding>
+			<!--<ion-row>
+				 <ion-col col-1 style="background:#a4391a;border: 1px solid white;"></ion-col>
+				 <ion-col col-11 class="offwhiteclr">Current Date</ion-col>
+			</ion-row>
+			
+			<div style="height:10px"></div>-->
+			
+			<ion-row>
+				 <ion-col col-1 style="background:cadetblue;"></ion-col>
+				 <ion-col col-11 class="offwhiteclr">Event Dates</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+		
+</ion-content >

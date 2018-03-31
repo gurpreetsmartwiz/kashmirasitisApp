@@ -1,0 +1,61 @@
+page-matrimony {
+    .button-md-dark {
+		color: #fff;
+		background-color: #4d4d4d;
+	}
+	.alert-md .alert-message {
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		color: white!important;
+	    background-color: linear-gradient(to left, #ffffff 2%, rgb(48, 48, 48) 90%) !important;
+	}
+	.alert-md .alert-head {
+	    background-image: url(../assets/img/menubg.jpg)!important;
+		color:white!important;
+		text-align: left;
+		text-align: start;
+		padding-left: 24px;
+		padding-right: 24px;
+		padding-top: 24px;
+		padding-bottom: 20px;
+	}
+    .swiper-pagination-bullets {
+	    bottom:10px!important;
+		left: 30% !important;
+		right: 30% !important;
+		width: 40% !important;
+		background: rgba(193, 191, 191, 0.57);
+		border-radius: 25px;
+	}
+	.swiper-container {
+		width: 100%;
+		height: 40%!important;
+	}
+	.swiper-pagination-bullet-active {
+		opacity: 1;
+		background: #ef1909!important;
+	}
+	.swiper-pagination-bullet {
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		border-radius: 100%;
+		background:white;
+		opacity:1;
+		pointer-events: auto;
+	}
+	ion-slides {
+	 display: initial; 
+	}
+	.slider_btn{
+	    border-radius: 50px;
+		height: 30px;
+		width: 30px;
+		font-size: 25px;
+		padding: 23px;
+		text-align: center;
+		margin: 0;
+		border: 4px solid white;
+	}
+
+}

@@ -1,0 +1,34 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent>
+    <ion-buttons transparent left > 
+		 <button style="background: transparent;" menuToggle >
+			 <ion-icon class="whiteclr" style="font-size: 25px;" name="menu"></ion-icon>
+		 </button> 
+	</ion-buttons>
+    <ion-title color="light" >Information</ion-title>
+	 <ion-buttons right> 
+		 <button  ion-button clear end>
+            <ion-icon name="menu" style="color:transparent"></ion-icon>
+         </button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+<div *ngFor="let data of infoList">
+
+   <p class="addclr"><b>{{data.for}}</b></p>
+   <div [innerHTML]="data.content"></div>
+     
+   <ion-grid></ion-grid>
+      
+</div>  
+   
+   
+</ion-content>

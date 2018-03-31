@@ -1,0 +1,55 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent>
+    <ion-buttons right> 
+		 <button  ion-button clear start>
+            <ion-icon name="menu" style="color:transparent"></ion-icon>
+         </button>
+	</ion-buttons>
+	
+    <ion-title>Contribution</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+
+<ion-content padding>
+
+
+
+    <form  #formCtrl="ngForm">    
+		<ion-item>
+			<ion-label fixed>Name</ion-label>
+			<ion-input name="username" [(ngModel)]="name" type="text"  required></ion-input>
+		</ion-item>
+		
+		
+		
+	   <ion-item>
+			<ion-label fixed>Email</ion-label>
+			<ion-input name="email" [(ngModel)]="email" type="email" required></ion-input>
+	   </ion-item> 
+	   
+	   
+	   
+	   <ion-item>
+			<ion-label fixed>Topic</ion-label>
+			<ion-input name="topic" [(ngModel)]="topic" type="text" required></ion-input>
+	   </ion-item>
+   
+   
+   
+		<ion-grid></ion-grid> <ion-grid></ion-grid>
+		<p text-center><b>Add your Contribution here</b></p>
+		&nbsp;&nbsp; <textarea type="text" rows="4" name="contribution" style="width:95%;border-radius: 10px;padding: 10px;" [(ngModel)]="contribution" [attr.maxlength]="500" required></textarea>
+   
+
+		
+		<div text-center padding><button ion-button  color="dark" class="header" block  (click)="postContributeData()" [disabled]="!formCtrl.form.valid">Post Contribution</button></div>
+		
+	</form>
+</ion-content>

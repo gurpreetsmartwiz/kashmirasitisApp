@@ -1,0 +1,8 @@
+{
+  "name": "Culture_App",
+  "app_id": "87f95ad1",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

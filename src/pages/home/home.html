@@ -1,0 +1,186 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent>
+  
+    <ion-buttons transparent left > 
+		 <!-- <button style="background: transparent;"  (click)="openScreenView('InfoPage')" > -->
+			 <!-- <ion-icon class="whiteclr" style="font-size: 25px;" name="ios-information-circle-outline"></ion-icon> -->
+		 <!-- </button>   -->
+		 <button style="background: transparent;" menuToggle >
+			 <ion-icon class="whiteclr" style="font-size: 25px;" name="menu"></ion-icon>
+		 </button> 
+	</ion-buttons>
+  
+    <ion-title text-center light color="light">Kashmir As It Is</ion-title>
+	
+	<ion-buttons right >
+	    <button ion-button color="light" clear (click)="showSubscribePrompt()">
+		   <ion-icon style="font-size: 27px;" name="ios-mail" ></ion-icon>
+		</button>
+		
+		<button ion-button color="light" clear (click)="confirmLogout()" *ngIf="dataService.userLoginStatus == '1'"> 
+		   <ion-icon style="font-size: 27px;" name="md-log-out" ></ion-icon> 
+		</button>
+		<!-- <button ion-button color="light" clear style="font-size: 21px;" (click)="openScreenView('CalendarPage')"> -->
+		   <!-- <ion-icon name="md-calendar" ></ion-icon> -->
+		<!-- </button> -->
+		<!-- <button ion-button color="light" clear style="font-size: 21px;" (click)="openScreenView('NotificationlistPage')"> -->
+		   <!-- <ion-icon name="ios-notifications-outline" ></ion-icon> -->
+		<!-- </button>		 -->
+	</ion-buttons>
+  </ion-navbar>
+   
+</ion-header>
+
+
+<ion-content  class="bg3" >
+
+	<ion-row style="height:170px;background-color: rgba(0, 0, 0, 0.58);" class="bg" (click)="initCategories()"></ion-row>
+
+    
+	
+    <hr class="hrstyle" >
+       <ion-row class="padding_tb whiteclr font_size_16"  ><ion-col text-center col-12><b>Being Kashmiri</b></ion-col></ion-row>
+    <hr class="hrstyle" >
+	
+
+	
+	
+	<div padding style="padding-top: 7px;">
+	   <ion-grid>
+	      
+       		  
+		  <!-- <ng-template #falsyTemplate  >  -->
+		  <!-- <div *ngIf="networkAvailability && ApiResponse"> -->
+	      <!-- <ion-row padding  style="height:120px;background:rgba(247, 241, 245, 0.26);" > -->
+		      <!-- <ion-col text-center style="border:0px!important"> -->
+				  <!-- <img src="assets/img/sorry.png" style="height:50px;width:50px"> -->
+				  <!-- <h5 text-center style="color:#ffa500;margin-top: 0.6rem;" > Search Category not Found. </h5> -->
+			  <!-- </ion-col>	   -->
+		  <!-- </ion-row> -->
+		  <!-- </div> -->
+		  <!-- </ng-template> -->
+		
+		
+		  <ion-row padding *ngIf="!networkAvailability " style="height:120px;margin-bottom:20px;background:rgba(247, 241, 245, 0.26);" >
+		      <ion-col text-center style="border:0px!important">
+				  <img src="assets/img/sorry.png" style="height:50px;width:50px">
+				  <h5 text-center style="color:#ffa500;margin-top: 0.6rem;" > Network Disconnect. </h5>
+			  </ion-col>	  
+		  </ion-row>
+		  
+		  <ion-row  *ngIf="categoryList?.length;else falsyTemplate" wrap style="border-top:1px solid #a9a4a4;">
+			 <ion-col text-center col-6 *ngFor="let cat of categoryList" [cat]="cat" (click)="goToCategory(cat.category,cat.subcategory)" style="border-bottom:1px solid #a9a4a4;">
+				<img src="{{dataService.imgPath}}{{cat.icon}}" class="icon_size padding_top">
+				<p class="whiteclr">{{cat.category}}</p>
+				<p class="whiteclr" *ngIf="searchItemName">{{searchItemName}}</p>
+			 </ion-col>
+		  </ion-row> 
+		  </ion-grid>	 
+	</div> 
+
+	
+
+	
+  
+  <!--<hr class="hrstyle" >
+      <ion-row class="padding_tb whiteclr font_size_16"  ><ion-col text-center col-12><b>Other Categories</b></ion-col></ion-row>
+  <hr class="hrstyle" >-->
+  
+  
+  
+  
+  
+    <ion-row class="blockPadding">
+	     <ion-col text-center  style="margin:5px" class="col_bg" (click)="openScreenView('MatrimonyPage')" >
+		    <img src="assets/img/metri.png" class="icon_size padding_top">
+			<p class="whiteclr">Matrimony</p>
+		 </ion-col>
+		 <ion-col text-center  style="margin:5px" class="col_bg" (click)="openScreenView('AskQuestionPage')">
+            <img src="assets/img/qa.png" class="icon_size padding_top"  >
+			<p class="whiteclr">You Ask We Reply</p>
+		 </ion-col>
+	 </ion-row>
+	 <ion-row class="blockPadding">
+	     <ion-col text-center style="margin:0px 5px 5px 5px;" class="col_bg" (click)="openScreenView('CalendarPage')" >
+            <ion-icon name="md-calendar" style="font-size: 50px" class="whiteclr"></ion-icon>
+			<p class="whiteclr">Calendar</p>
+		 </ion-col>
+		 <ion-col text-center style="margin:0px 5px 5px 5px;" class="col_bg" >
+            <ion-icon name="ios-create" style="font-size: 50px" class="whiteclr"></ion-icon>
+			<p class="whiteclr">Obituary</p>
+		 </ion-col>
+		 <!-- (click)="openScreenView('ObituaryPage')" -->
+	 </ion-row>
+  
+
+
+   
+   
+   
+   
+	<hr class="hrstyle" > 
+		<div text-center><button ion-button color="dark" (click)="openScreenView('ContributionPage')" class="whiteclr font_size_12" style="height: 1.6rem;" clear><b>Be a Contributor</b></button></div>
+	<hr class="hrstyle" > 
+   
+   
+   
+   
+   <div padding style="padding-bottom:0px">
+	   <ion-row >
+		   <ion-col  text-center class=" whiteclr" col-4 (click)="openlinkedPage('1')" >
+			   <img src="assets/img/fb.png" class="social_icon">
+			   <p class="font_size_12" >Facebook</p>
+		   </ion-col>
+		   <ion-col  text-center class=" whiteclr" col-4 (click)="openlinkedPage('2')">
+			   <img src="assets/img/wb.png" class="social_icon">
+			   <p class="font_size_12">Website</p>
+		   </ion-col>
+		   <ion-col  text-center col-4 class="whiteclr" (click)="openScreenView('FeedbackPage')">
+			   <img src="assets/img/fd.png" class="social_icon">
+			   <p class="font_size_12">FeedBack</p>
+		   </ion-col>
+		</ion-row>
+	</div>
+  
+ 
+ 
+ 
+   
+   <ion-row padding>
+	<ion-col text-center col-12 style="color:#ffd80d">
+		 <rating [(ngModel)]="rating" 
+				readOnly="true" 
+				max="5" 
+				emptyStarIconName="star-outline" 
+				halfStarIconName="star-half" 
+				starIconName="star" 
+				nullable="false" 
+				name="rating" required> 
+		</rating>   
+      </ion-col>
+	</ion-row>
+  
+  
+  
+  
+  
+    <!--<ion-row>
+		<ion-col  text-center col-12 class="whiteclr">This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</ion-col>
+	</ion-row>-->
+
+	
+	
+	
+	<ion-grid></ion-grid>
+	
+	
+	
+	
+   <ion-refresher (ionRefresh)="doRefresh($event)" >
+		<ion-refresher-content><ion-icon name="md-refresh-circle"></ion-icon>
+		</ion-refresher-content>
+   </ion-refresher>
+
+</ion-content>

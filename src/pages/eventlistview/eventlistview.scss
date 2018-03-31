@@ -1,0 +1,32 @@
+page-eventlistview {
+      hr.hrstyle { 
+		border: 0;
+		height: 2px;
+		background-image: linear-gradient(to right, transparent,black, transparent);
+	}
+	.card-md {
+		margin: 10px;
+		border-radius: 15px;
+		width: calc(100% - 20px);
+		font-size: 1.4rem;
+		background: rgba(253, 251, 251, 0.64)!important;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	}
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 1.6rem;
+		margin-bottom: 1rem;
+		font-weight: 500;
+		line-height: 0.2;
+	}
+	.card-ios {
+		margin: 10px;
+		border-radius: 15px;
+		width: calc(100% - 20px);
+		font-size: 1.4rem;
+		background: rgba(253, 251, 251, 0.64)!important;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	}
+	.card-ios p {
+		color: black;
+	}
+}

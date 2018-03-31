@@ -1,0 +1,75 @@
+page-home {
+ .toolbar-background-md {
+		 border-color: #b2b2b2;
+		 background:  #5e4236;
+	 }
+	 
+     .padding_top{
+	    padding-top: 4px;
+	 }
+	  
+	 [col-6] {
+		padding: 16px;
+	 }
+	 
+	ion-grid ion-row ion-col:nth-child(odd) {
+		border-right:1px solid #a9a4a4;
+	}
+	ion-grid ion-row  ion-col:nth-child(even) {
+		border-right:0px;
+	}
+
+	ion-grid  ion-row  ion-col:nth-last-child(1) {
+		border-bottom:0px;
+	}
+	ion-grid  ion-row  ion-col:nth-last-child(2) {
+		border-bottom:0px;
+	}
+	
+	.fixed-content {
+		margin-top: 57px!important;
+	}
+	.scroll-content {
+	   margin-top: 54px!important;
+	}
+	
+	.col_bg{
+	    background: rgba(250, 235, 215, 0.14);
+	}
+	 .chip-md {
+		border-radius: 16px;
+		height: 32px;
+		font-size: 13px;
+		line-height: 32px;
+		color: rgba(247, 164, 7, 0.87);
+		background: rgba(249, 248, 248, 0.24);
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
+	.chip-md-secondary, .chip-md .icon-md-secondary {
+		color: #f9c11b;
+		background-color: #ad3f1a;
+	}
+	ul.rating[_ngcontent-c0] li[_ngcontent-c0] {
+		display: inline;
+		border: 0px;
+		font-size: 1.2em;
+		background: none;
+		padding: 0px 0px;
+	}
+	ul, menu, dir {
+		display: block;
+		list-style-type: disc;
+		-webkit-margin-before: 1em;
+		-webkit-margin-after: 1em;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+		-webkit-padding-start: 0px!important;
+	}
+	.blockPadding{
+	    padding: 0px 15px 5px 15px;
+	}
+
+}

@@ -1,0 +1,26 @@
+page-eventpopover {
+   .popover-md .popover-content {
+		border-radius: 2px;
+		width: 260px!important;
+		min-width: 0;
+		min-height: 0;
+		max-height: 90%;
+		color: #000;
+		background: #fff;
+		box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.3);
+		-webkit-transform-origin: top left;
+		transform-origin: top left;
+	}
+	.label_clr{
+	  color:#197275;
+	}
+	 hr.hrstyle { 
+		border: 0;
+		height: 2px;
+		background-image: linear-gradient(to right, transparent,black, transparent);
+	}
+	.remove_bottom_padding{
+	    padding-bottom:0px;
+	}
+
+} 

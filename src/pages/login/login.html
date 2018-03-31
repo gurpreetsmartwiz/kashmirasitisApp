@@ -1,0 +1,155 @@
+
+<ion-header transparent>
+
+  <ion-navbar transparent>
+   
+   <ion-buttons transparent left > 
+		 <button style="background: transparent;" menuToggle >
+			 <ion-icon class="whiteclr" style="font-size: 25px;" name="menu"></ion-icon>
+		 </button> 
+	</ion-buttons>
+  
+    <ion-title color="light" >Login / Signup</ion-title>
+	 <ion-buttons right> 
+		 <button  ion-button clear end>
+            <ion-icon name="menu" style="color:transparent"></ion-icon>
+         </button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-footer>
+<div >
+  <ion-segment color="light" [(ngModel)]="LoginSignup">
+    <ion-segment-button color="light" value="login">
+      Login
+    </ion-segment-button>
+    <ion-segment-button color="light" value="signup">
+      Signup
+    </ion-segment-button>
+  </ion-segment>
+</div>
+</ion-footer>
+
+
+<ion-content class="bg2" padding>
+
+<div [ngSwitch]="LoginSignup">
+  
+  
+  
+  
+<div *ngSwitchCase="'login'"> 
+<ion-row style="height:170px;" class="bg" ></ion-row>
+
+<form [formGroup]="authFormLogin" >
+  <ion-item style="margin-top:15px">
+    <ion-label floating>User E-mail</ion-label>
+    <ion-input  [(ngModel)]="formDataLogin.email"  [formControl]="authFormLogin.controls['email']"   type="email" value=""></ion-input>
+  </ion-item>
+
+  <ion-item class="inputFieldTopMargin">
+    <ion-label floating>Password</ion-label>
+    <ion-input [(ngModel)]="formDataLogin.password" [formControl]="authFormLogin.controls['password']" type="password"></ion-input>
+  </ion-item>
+ <button type="submit" (click)="submitLoginForm()" ion-button full color="secondary" [disabled]="!authFormLogin.valid"  style="margin-top: 25px;">Login</button> 
+ 
+
+ <button ion-button color="light" clear (click)="goResetPassword()">Forgot password?</button> 
+
+ </form>  
+</div>  
+  
+  
+
+<div *ngSwitchCase="'signup'" >
+   <form [formGroup]="authFormSignup" >
+    <ion-item>
+      <ion-label floating>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="formDataSignup.fname" [formControl]="authFormSignup.controls['fname']" [ngClass]="{'error-border':!authFormSignup.controls['fname'].valid}"></ion-input>
+    </ion-item>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['fname'].hasError('required') && authFormSignup.controls['fname'].touched">* Firstname is required!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['fname'].hasError('minlength') && authFormSignup.controls['fname'].touched">* Minimum Firstname length should be 3!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['fname'].hasError('maxlength') && authFormSignup.controls['fname'].touched">* Maximum Firstname length should be 10!</div> 
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['fname'].hasError('pattern') && authFormSignup.controls['fname'].touched">* Enter alphabets only!</div>
+      
+	
+    <ion-item class="inputFieldTopMargin">	
+	  <ion-label floating>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="formDataSignup.lname" [formControl]="authFormSignup.controls['lname']" [ngClass]="{'error-border':!authFormSignup.controls['lname'].valid}"></ion-input>
+    </ion-item>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['lname'].hasError('required') && authFormSignup.controls['lname'].touched">* Lastname is required!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['lname'].hasError('minlength') && authFormSignup.controls['lname'].touched">* Minimum Lastname length should be 3!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['lname'].hasError('maxlength') && authFormSignup.controls['lname'].touched">* Maximum Lastname length should be 10!</div>
+     <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['lname'].hasError('pattern') && authFormSignup.controls['lname'].touched">* Enter alphabets only!</div>
+	
+    <ion-item class="inputFieldTopMargin">
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email"  [(ngModel)]="formDataSignup.email"  [formControl]="authFormSignup.controls['email']"></ion-input>
+    </ion-item>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['email'].hasError('required') && authFormSignup.controls['email'].touched">* Email is required!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['email'].hasError('pattern') && authFormSignup.controls['email'].touched">* Please enter valid email!</div>
+   
+	
+	
+	<ion-item class="inputFieldTopMargin">
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"  [(ngModel)]="formDataSignup.password"  [formControl]="authFormSignup.controls['password']"></ion-input>
+    </ion-item>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['password'].hasError('required') && authFormSignup.controls['password'].touched">* Password is required!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['password'].hasError('minlength') && authFormSignup.controls['password'].touched">* Minimum Password length should be 8!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['password'].hasError('maxlength') && authFormSignup.controls['password'].touched">* Maximum Password length should be 16!</div>
+    
+	
+	<ion-item class="inputFieldTopMargin">
+      <ion-label floating>Confirm Password</ion-label>
+      <ion-input type="password"  [(ngModel)]="formDataSignup.confirmpwd" pattern="{{formDataSignup.password}}" [formControl]="authFormSignup.controls['confirmpwd']"></ion-input>
+    </ion-item>
+	<div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['confirmpwd'].hasError('required') && authFormSignup.controls['confirmpwd'].touched">* Confirm Password is required!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['confirmpwd'].hasError('pattern') && authFormSignup.controls['confirmpwd'].touched">* Password not matched!</div>
+
+	
+	
+	<ion-item class="inputFieldTopMargin">
+        <ion-label floating>Mobile Number</ion-label>
+        <ion-input type="tel" maxlength="10"  [(ngModel)]="formDataSignup.tel"  [formControl]="authFormSignup.controls['tel']"></ion-input>
+     </ion-item>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['tel'].hasError('required') && authFormSignup.controls['tel'].touched">* Phone number is required!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['tel'].hasError('minLength') && authFormSignup.controls['tel'].touched">* Please enter valid Mobile number!</div>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['tel'].hasError('maxLength') && authFormSignup.controls['tel'].touched">* Please enter valid Mobile number!</div>
+    
+	
+	
+    <ion-label class="selectlabel">Residency country</ion-label>
+	<ion-item >
+    <ion-select [(ngModel)]="formDataSignup.country"  [formControl]="authFormSignup.controls['country']" style="width:100%;padding-left:0">
+	<ion-label>Select Country</ion-label>
+      <ion-option  *ngFor="let country of countries" >{{country}}</ion-option>
+    </ion-select>
+   </ion-item>
+  <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['country'].hasError('required') && authFormSignup.controls['country'].touched">* country is required!</div>
+
+	
+	<ion-item class="inputFieldTopMargin">
+        <ion-label floating>Residency city</ion-label>
+        <ion-input type="text"  [(ngModel)]="formDataSignup.city"   [formControl]="authFormSignup.controls['city']"></ion-input>
+    </ion-item>
+	<div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['city'].hasError('required') && authFormSignup.controls['city'].touched">* city is required!</div>
+
+	
+    <ion-item class="inputFieldTopMargin">
+      <ion-label floating>Where from kashmir</ion-label>
+      <ion-input type="text" [(ngModel)]="formDataSignup.wfkashmir"  [formControl]="authFormSignup.controls['wfkashmir']"></ion-input>
+    </ion-item>
+    <div class="errorLabel speech-bubble" *ngIf="authFormSignup.controls['wfkashmir'].hasError('required') && authFormSignup.controls['wfkashmir'].touched">* Required!</div>
+
+   
+    <button type="submit" (click)="submitSignUpForm()" ion-button full class="header"  [disabled]="!authFormSignup.valid"  style="margin-top: 20px;">Submit</button>
+  </form>
+</div>
+</div>
+
+
+
+ 
+</ion-content>

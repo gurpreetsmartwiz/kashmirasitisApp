@@ -1,0 +1,24 @@
+page-subcategorylist {
+    .toolbar-background-md {
+		 border-color: #b2b2b2;
+		 background:  #5e4236;
+	 }
+	.button-round-md {
+		border-radius: 13px;
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
+		padding-top: 14px;
+		padding-bottom: 14px;
+		font-size: 11px;
+	}
+	.item-md.item-block .item-inner {
+		padding-right: 8px;
+		border-bottom:0px;
+	}
+	.button-md-light {
+		color: #e77829;
+		background-color: #f4f4f4;
+		border: 1px solid #d65f1c;
+	}
+
+}

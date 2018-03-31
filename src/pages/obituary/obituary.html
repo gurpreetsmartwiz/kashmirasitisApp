@@ -1,0 +1,119 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent>
+    <!-- <ion-buttons  left >  -->
+		 <!-- <button style="background:transparent" menuToggle> -->
+			 <!-- <ion-icon class="whiteclr font_size_21"  name="menu"></ion-icon> -->
+		 <!-- </button>  -->
+	<!-- </ion-buttons> -->
+	<ion-title>Obituary</ion-title>
+    <ion-buttons right> 
+		 <button  ion-button clear start>
+            <ion-icon color="light" name="menu" style="color:transparent"></ion-icon>
+         </button>
+	</ion-buttons>  
+  </ion-navbar>
+<div >
+  <ion-segment color="light" [(ngModel)]="obituary">
+    <ion-segment-button color="light" value="AllObi">
+      All Obituaries
+    </ion-segment-button>
+    <ion-segment-button color="light" value="AddObi">
+      Add Obituary
+    </ion-segment-button>
+  </ion-segment>
+</div>
+</ion-header>
+
+
+
+
+
+<ion-content >
+
+<div [ngSwitch]="obituary">
+  
+  
+  
+  
+<ion-list *ngSwitchCase="'AllObi'" style="background:lightgrey"> 
+  <ion-card *ngFor="let obituary of obituaryList">
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img *ngIf="!obituary.img_path"  src="assets/img/default.png">
+      <img *ngIf="obituary.img_path"  [src]="obituary.img_path">
+    </ion-avatar>
+    <h2>{{obituary.title}}</h2>
+    <p class="font_size_21">{{obituary.dob}}</p>
+    <p class="font_size_21">{{obituary.dod}}</p>
+  </ion-item>
+
+
+  <ion-card-content>
+    <h2>Obituary</h2>
+    <p class="font_size_21">{{obituary.description}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col col-6 offset-6>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 Comments</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+</ion-list>  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <ion-list *ngSwitchCase="'AddObi'" padding>
+    <form  #formCtrl="ngForm">  
+	
+	   <div text-center padding style="position:relative;" (click)="getImage()" >
+		   <img *ngIf="myPhoto" class="imageStyle" [src]="myPhoto"/>
+		   <img *ngIf="!myPhoto" class="imageStyle" [src]="DefaultPhoto"/>
+		   <ion-icon name="ios-create" class="IconPosition"></ion-icon>
+	   </div>
+	
+	
+       <ion-item>
+			<ion-label fixed>Title</ion-label>
+			<ion-input name="title" [(ngModel)]="obituaryData.title" type="text"  required></ion-input>
+		</ion-item>
+		
+		
+		
+	   <ion-item>
+			<ion-label fixed>Date of Birth</ion-label>
+			<ion-datetime name="born" displayFormat="DD MMM, YYYY" pickerFormat="DD MMM, YYYY" [(ngModel)]="obituaryData.born"></ion-datetime>
+	   </ion-item> 
+	   
+	   
+	   
+	   <ion-item>
+			<ion-label fixed>Eternity date</ion-label>
+			<ion-datetime name="eternity" displayFormat="DD MMM, YYYY" pickerFormat="DD MMM, YYYY" [(ngModel)]="obituaryData.eternity"></ion-datetime>
+	   </ion-item>
+	   
+	   
+	   <ion-grid></ion-grid> <ion-grid></ion-grid>
+		<p padding><b>Obituary Discription</b></p>
+		&nbsp;&nbsp; <textarea type="text" rows="4" name="obituary" style="width:95%;border-radius: 10px;padding: 10px;" [(ngModel)]="obituaryData.description" [attr.maxlength]="500" required></textarea>
+       
+	   <div text-center padding><button ion-button  color="dark" class="header" block  (click)="submitObituary()" [disabled]="!formCtrl.form.valid">Submit Obituary</button></div>
+       </form>
+  </ion-list>
+</div>
+
+   
+</ion-content>

@@ -1,0 +1,67 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent>
+    <ion-title>Matrimony</ion-title>
+	<ion-buttons right>
+		 <button  ion-button clear >
+            <ion-icon name="menu" style="color:transparent"></ion-icon>
+         </button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content >
+
+
+
+   <ion-slides pager   pager="true"  autoplay="1000" loop="true" speed="1000" >
+		<ion-slide *ngFor="let image of imagelides" [style.background-image]="'url(assets/img' + image.img + ')'" style="background-size: cover;background-repeat: no-repeat;background-position: center">
+		</ion-slide>
+   </ion-slides>
+
+   
+   <ion-grid class="gradient1 whiteclr radius">
+       <ion-row>
+	    <ion-col col-12 text-left><b>Home  &nbsp;>>&nbsp; Matrimony</b></ion-col>
+       </ion-row>
+   </ion-grid>
+	
+   
+
+	
+    <div padding text-center>
+	<fieldset text-left padding radio-group [(ngModel)]="selectedGender" style="border-radius: 10px;">
+     <legend style="color:#f32e10;font-size:18px"><b> Search: </b></legend>
+		  <ion-item >
+			  <ion-label>Boy</ion-label>
+			  <ion-radio  value="Boy" (click)="goToSearchItem(selectedGender)"></ion-radio>
+		  </ion-item>
+
+		  <ion-item >
+			  <ion-label>Girl</ion-label>
+			  <ion-radio  value="Girl" (click)="goToSearchItem(selectedGender)"></ion-radio>
+		  </ion-item>
+     </fieldset>
+     
+	 <ion-grid></ion-grid>
+	 <ion-grid></ion-grid>
+	 
+     <button ion-button color="dark" class="header" (click)="addMatrimonyPrompt()">Add Matrimony</button>
+   
+   
+	</div> 
+	
+</ion-content>
+
+
+<ion-footer >
+	<ion-row>
+        <ion-col col-12 >
+          {{dataService.footerdata}}
+		</ion-col>
+	</ion-row>
+</ion-footer>

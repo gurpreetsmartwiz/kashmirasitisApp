@@ -1,0 +1,45 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent>
+    <ion-title>Looking for {{searchItem}}</ion-title>
+	
+	<ion-buttons right (click)="Sort_Searchresult($event)">
+	    <button ion-button style="width:46px">
+		   <img src="assets/img/sort.png" style="width:75%">
+		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+
+
+    <div *ngFor="let item of searchingListItems ; let i = index">	 
+	   <button ion-item  (click)="openModal(item)" *ngIf="i<counter">
+			<p>{{item.details}}</p> 	 
+	  </button> 
+    </div>
+	
+	
+	
+	<ion-row *ngIf="hideSeemore">
+	   <button ion-button color="primary"  clear style="text-transform: none;font-size: 1.8rem;" (click)="seeMoreList()">See more..</button>
+	</ion-row>   
+	
+	
+	
+</ion-content>
+
+
+
+<ion-footer >
+	<ion-row>
+        <ion-col col-12 >
+          {{dataService.footerdata}}
+		</ion-col>
+	</ion-row>
+</ion-footer>

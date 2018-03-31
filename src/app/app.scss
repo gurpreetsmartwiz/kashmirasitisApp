@@ -1,0 +1,227 @@
+
+	.toolbar-background-md {
+		border-color: #b90806;
+		background-image: url(../assets/img/bg2.jpg);
+	  
+	}
+
+	.navbarColor{
+		border-color: #b90806;
+		background-image: url(../assets/img/bg2.jpg);
+	  
+	}
+
+	.bg{
+		background-image: url(../assets/img/app1.PNG);
+		background-size: cover;
+		background-repeat: no-repeat;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;
+	 }
+	 .bg2{
+		background-image: url(../assets/img/bg2.jpg);
+		background-size: cover;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;
+	 } 
+	 
+	 .bg3{
+		background-image: url(../assets/img/bg3.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;
+	 } 
+
+	 .header{
+		background-image: url(../assets/img/header.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;
+	 } 
+	 
+	 hr.hrstyle { 
+		border: 0;
+		height: 2px;
+		background-image: linear-gradient(to right, transparent, rgb(236, 236, 236), transparent);
+	}
+	.whiteclr{
+		color:white;
+	}
+	.offwhiteclr{
+		color:#e2dfdf;
+	}
+	.remove_padding{
+		padding:0px;
+	}
+	page-home .searchbar-md .searchbar-input {
+		padding-bottom: 4px;
+		padding-top: 4px;
+		border-radius: 40px;
+		line-height: 3rem;
+		color: #31acc1;
+		border: 1px solid #d6c6c6;
+		background-color: rgba(234, 78, 18, 0);
+	}
+	.cover_img{
+		background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 31%;	
+	}
+
+	.Q_a_bg{
+		background-image: url(../assets/img/q.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;
+		background-color:rgba(230, 89, 193, 0.7);
+	  }
+	  .Q_a_bg2{
+		background-image: url(../assets/img/slider.JPG);
+		background-size: cover;
+		background-repeat: no-repeat;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;
+		background-color:rgba(230, 89, 193, 0.7);
+	  }
+	.icon_size{
+			height: 45px;
+			width: 45px;
+	}
+	.fab-md-light {
+		color: #fbf8f8;
+		background-color: #c50202;
+	}
+	ion-fab[bottom] {
+		bottom: 3px;
+	}
+	.fab-md-in-list {
+		color: #f7f5f5;
+        background-color: #c50202;
+	}
+	.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+		color: #f9f7f7!important;
+		background-color: transparent;
+	}
+	.font_size_16{
+		font-size: 16px;
+	}
+
+	.font_size_12{
+	   font-size: 12px;
+	}
+	
+	.font_size_21{
+	   font-size: 21px;
+	}
+		
+	.gradient1 {
+		background: linear-gradient(to left, #ffffff 2%, #af3e1a 90%) !important;
+	}
+	.social_icon{
+		height: 40px;
+		width: 40px;
+	}
+	p{
+	   margin: 2px;
+	}
+	.loading-md .loading-wrapper {
+		padding: 0px;
+		max-width: 280px;
+		max-height: 90%;
+		font-size:18px;
+		border-radius: 2px;
+		color: rgb(249, 249, 249);
+		background: transparent;
+		box-shadow:none;
+        }
+	ion-spinner {
+		background: rgba(255, 255, 255, 0.01);
+    }
+	.spinner-crescent circle {
+		fill: rgba(241, 12, 12, 0.01);
+		stroke-width: 4px;
+		stroke-dasharray: 180px;
+		stroke-dashoffset: 82px;
+	}
+	.loading-md .spinner-crescent circle {
+		stroke: white;
+	}
+    .refresher-refreshing .spinner-crescent circle {
+		stroke: #fff;
+	}
+	
+	.toolbar-title-ios {
+	  font-family: Deja2!important;
+	  font-size:13px!important;
+	  text-align:center!important;
+	  padding-left: 5px!important;
+      padding-right: 5px!important;
+	}
+
+	.toolbar-title-md {
+	  font-family: Deja2!important;
+	  font-size:13px!important;
+	  text-align:center!important;
+	  padding-left: 5px!important;
+      padding-right: 5px!important;
+	}
+
+	.toolbar-title-wp {
+	  font-family: Deja2!important;
+	  font-size:13px!important;
+	  text-align:center!important;
+	  padding-left: 5px!important;
+      padding-right: 5px!important;
+	}
+	
+	.md,
+	.ios,
+	.wp {
+		.back-button {
+			color: white !important;//what ever the color you like
+		}
+	}
+	.alert-md .alert-wrapper {
+		border-radius: 10px;
+		max-width: 280px;
+		overflow-y: scroll!important;
+		border: 1px solid #ec0202;
+		background-color: #fafafa;
+		box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+	}
+	.alert-md .alert-button {
+		text-align: right;
+		text-align: end;
+		border-radius: 2px;
+		position: relative;
+		overflow: hidden;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: #488aff;
+		background-color: transparent;
+		margin-left: 0;
+		margin-right: 8px;
+		margin-top: 0;
+		height: 29px;
+		margin-bottom: 0;
+		padding: 10px;
+	}
+	ion-footer {
+		text-align: -webkit-center;
+		background: black;
+		color: #f78207;
+	}
+	.brown_clr{
+		color: #a83c1a;
+	}
+	.alert-md .alert-title {
+	    font-size: 18px;
+	}
+	.inputFieldTopMargin{
+		  margin-top:8px
+		}
+
+	

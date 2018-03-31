@@ -1,0 +1,57 @@
+page-obituary {
+    .toolbar-background-md {
+		border-color: #b2b2b2;
+		background: rgba(248, 248, 248, 0)!important;
+	}
+	.no-padding {
+		padding: 0px !important;
+	}
+	.segment-md .segment-button {
+		font-size: 1.3rem;
+		text-transform: none;
+	}
+	.imageStyle{
+	    border-radius: 100%;
+        border: 1px solid grey;
+		height:100px;
+		width:100px;
+		
+	}
+	.IconPosition{
+	    position: absolute;
+		bottom: 26px;
+		font-size: 27px;
+		right: 34%;
+	}
+	.item-md ion-avatar img {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+	.imgicon{
+	    height: 25px;
+        width: 25px;
+	}
+	.segment-ios .segment-button {
+		height: 3.0em;
+		border-width: 1px;
+		color:#d6d5d5;
+		border-style: solid;
+		border-color: transparent;
+		background-color: transparent;
+	}
+	.segment-ios .segment-button:last-of-type {
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	.segment-ios .segment-button:first-of-type {
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+	}
+	.segment-ios-light .segment-button.segment-activated {
+		color: white;
+		background-color:transparent;
+		border-bottom:2px solid white;
+	}
+}

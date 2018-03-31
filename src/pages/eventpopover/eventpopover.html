@@ -1,0 +1,44 @@
+
+<ion-content  (click)="close()" >
+
+     <ion-grid class="remove_bottom_padding">
+      <ion-row class="remove_bottom_padding">
+	      <ion-col class="remove_bottom_padding" col-3></ion-col>
+          <ion-col text-center  class="label_clr remove_bottom_padding" col-6><b> Event Detail </b></ion-col>
+          <ion-col text-right class="remove_bottom_padding" col-3 (click)="close()">
+			    <ion-icon name="md-close" color="primary" style="font-size:25px;color:#197275;"></ion-icon>
+		  </ion-col>		 
+	  </ion-row>
+	  </ion-grid>
+	  
+	  
+	  
+	  
+	  
+	<hr class="hrstyle" > 
+
+	
+	
+	
+	<ion-grid *ngFor="let item of events" > 
+	  <ion-row>
+			<!-- <ion-col col-6 class="label_clr"><b>Event name:</b></ion-col> -->
+			<ion-col text-center col-12>{{item.ev_name}}</ion-col>
+	   </ion-row>
+	   
+	   
+	   <!-- <ion-row>
+		   <ion-col col-6 class="label_clr"><b>Tithi:</b></ion-col>
+			<ion-col text-right col-6>{{item.tithi}}</ion-col>
+	   </ion-row>
+	   
+	   
+	   <ion-row>
+		   <ion-col col-6 class="label_clr"><b>Event date:</b></ion-col>
+			<ion-col text-right col-6>{{item.start | date:'dd-MM-yyyy'}}</ion-col>
+	   </ion-row>-->
+	</ion-grid>    
+	
+	
+	
+</ion-content>

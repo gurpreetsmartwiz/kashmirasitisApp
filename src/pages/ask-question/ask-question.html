@@ -1,0 +1,74 @@
+
+<ion-header class="header">
+
+  <ion-navbar transparent> 
+    <ion-title>Ask Question</ion-title>
+	<ion-buttons right (click)="Sort_Searchresult($event)">
+	    <button ion-button style="width:46px">
+		   <img src="assets/img/sort.png" style="width:75%">
+		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+  
+    <ion-row style="height:170px;border-bottom: 1px solid #53565f;" class="Q_a_bg " *ngIf="showAns" >
+      <ion-col text-center col-12></ion-col>
+   </ion-row>  
+
+   
+   <ion-row style="border-bottom: 1px solid #53565f;" class="Q_a_bg2 "  *ngIf="!showAns" >
+		  <ion-col text-center col-12 style="color:white;" >
+		   <ion-scroll scrollY="true" style="width: 100%;height:170px;">
+			<ion-grid>
+			</ion-grid>
+			<b class="slide-in">{{answer}}</b>
+		  </ion-scroll>
+		  </ion-col>
+   </ion-row>
+  
+  
+   <ion-searchbar [(ngModel)]="searchvalue" (ionInput)="getQuestions($event)" style="background:white"></ion-searchbar>
+   
+</ion-header>
+
+
+
+
+
+<ion-content >
+
+
+   
+	<ion-list>
+	      <div *ngFor="let questions of questionList; let i = index">
+			  <button ion-item text-wrap (click)="selectedQues(questions.answer)" style="font-size:1.4rem" *ngIf="i<counter">
+				{{ questions.question }}
+			  </button>
+          </div>		  
+	</ion-list>
+	
+	
+	
+	
+	
+	<ion-row *ngIf="hideSeemore">
+	   <button ion-button color="primary"  clear style="text-transform: none;font-size: 1.8rem;" (click)="seeMoreList()">more..</button>
+	</ion-row>   
+   
+
+   
+   
+   
+    <ion-fab right bottom  (click)="addQueries()">
+	    <button ion-fab class="header" color="light"><ion-icon name="ios-create-outline" class="whiteclr"></ion-icon></button>
+	</ion-fab>
+	
+	
+	
+   <ion-refresher (ionRefresh)="doRefresh($event)" >
+     <ion-refresher-content><ion-icon name="md-refresh-circle"></ion-icon>
+     </ion-refresher-content>
+   </ion-refresher>
+	
+	
+</ion-content>
